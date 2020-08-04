@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:slidable_test/slidablePage.dart';
+import 'package:slidable_test/volunteerListTile.dart';
 
 void main() {
   runApp(MyApp());
@@ -50,18 +52,78 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
-  }
+  var _list = [
+    {
+      'icon': 'assets/hedgehog.png',
+      'code': 1,
+      "company": '국민건강보험공단 인재개발원',
+      'address': '구로1동, 구로2동',
+      'item': '마스크, 소독제'
+    },
+    {
+      'icon': 'assets/hedgehog.png',
+      'code': 2,
+      'company': '구로1동주민센터',
+      'address': '구로1동',
+      'item': '가정용 체온계, 라면, 참치캔'
+    },
+    {
+      'icon': 'assets/hedgehog.png',
+      'code': 3,
+      'company': '지파운데이션',
+      'address': '신림동',
+      'item': '생리대키트'
+    },
+    {
+      'icon': 'assets/hedgehog.png',
+      'code': 4,
+      'company': '구로2동주민센터',
+      'address': '구로2동',
+      'item': '가정용 체온계, 라면, 참치캔'
+    },
+    {
+      'icon': 'assets/hedgehog.png',
+      'code': 5,
+      'company': '구로3동주민센터',
+      'address': '구로3동',
+      'item': '생리대키트'
+    },
+    {
+      'icon': 'assets/hedgehog.png',
+      'code': 6,
+      'company': '구로4동주민센터',
+      'address': '구로4동',
+      'item': '마스크, 소독제'
+    },
+    {
+      'icon': 'assets/hedgehog.png',
+      'code': 7,
+      'company': '구로5동주민센터',
+      'address': '구로5동',
+      'item': '마스크, 소독제'
+    },
+    {
+      'icon': 'assets/hedgehog.png',
+      'code': 8,
+      'company': '구로6동주민센터',
+      'address': '구로6동',
+      'item': '마스크, 소독제'
+    },
+    {
+      'icon': 'assets/hedgehog.png',
+      'code': 9,
+      'company': '구로7동주민센터',
+      'address': '구로7동',
+      'item': '마스크, 소독제'
+    },
+    {
+      'icon': 'assets/hedgehog.png',
+      'code': 10,
+      'company': '구로8동주민센터',
+      'address': '구로8동',
+      'item': '마스크, 소독제'
+    }
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -72,46 +134,14 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+        appBar: AppBar(
+          // Here we take the value from the MyHomePage object that was created by
+          // the App.build method, and use it to set our appbar title.
+          title: Text(widget.title),
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        body: Center(
+            // Center is a layout widget. It takes a single child and positions it
+            // in the middle of the parent.
+            child: VolunteerListTile(this._list)));
   }
 }
